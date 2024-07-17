@@ -10,7 +10,7 @@ main() : Int64 {
         .build()
 
     server.distributor
-        .register("/", { context ->
+        .register("/", { context =>
             let respBuilder = context.responseBuilder
 
             let body = "<!DOCTYPE html><head><meta lang=\"zh-cmn-Hans\"><meta charset=\"UTF-8\"><title>Hello world!</title></head><body><h1>Hello world!</h1></body>"
@@ -20,7 +20,7 @@ main() : Int64 {
         })
     
     server.distributor
-        .register("/cangjie", {context -> 
+        .register("/cangjie", {context => 
             let respBuilder = context.responseBuilder
 
             respBuilder.status(301)
@@ -28,7 +28,7 @@ main() : Int64 {
         })
 
     server.distributor
-        .register("/favicon.ico", { context ->
+        .register("/favicon.ico", { context =>
             let respBuilder = context.responseBuilder
 
             respBuilder.body(File.openRead("favicon.ico"))
